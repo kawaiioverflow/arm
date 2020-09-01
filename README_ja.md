@@ -73,6 +73,12 @@ type Anime = {
 ]
 ```
 
+## バージョニング
+
+- メジャー: 破壊的変更の追加
+- マイナー: データベースの更新、新しい機能の追加 (破壊的変更は無い)
+- パッチ: データベースの修正、バグの修正
+
 ---
 
 <small><a href="https://github.com/manami-project/anime-offline-database">manami-project/anime-offline-database</a>にインスパイアされました。</small>

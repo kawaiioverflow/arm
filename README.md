@@ -73,6 +73,12 @@ type Anime = {
 ]
 ```
 
+## Versioning
+
+- Major: Add breaking change
+- Minor: Update database, Add new feature (No breaking change)
+- Patch: Fix database, Fix bug
+
 ---
 
 <small>Inspired by <a href="https://github.com/manami-project/anime-offline-database">manami-project/anime-offline-database</a>.</small>
