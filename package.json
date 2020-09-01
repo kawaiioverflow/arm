@@ -1,0 +1,31 @@
+{
+  "name": "@kawaiioverflow/arm",
+  "version": "0.1.0",
+  "generatorVersion": "0.4.0",
+  "generatedAt": "2020-09-02T00:26:08+09:00",
+  "description": "A JSON-based database to relation mapping Anime ID's between MAL, Annict, AniList and Syobocal",
+  "keywords": [
+    "anime",
+    "myanimelist",
+    "annict",
+    "anilist",
+    "syobocal"
+  ],
+  "homepage": "https://github.com/kawaiioverflow/arm",
+  "bugs": {
+    "url": "https://github.com/kawaiioverflow/arm/issues"
+  },
+  "license": "MIT",
+  "author": "P-Chan",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kawaiioverflow/arm.git"
+  },
+  "scripts": {
+    "format": "prettier --write ."
+  },
+  "devDependencies": {
+    "prettier": "^2.1.1"
+  }
+}
