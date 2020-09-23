@@ -1,0 +1,12 @@
+{
+  "git": {
+    "commitMessage": "chore: Bump version"
+  },
+  "npm": {
+    "publish": true
+  },
+  "github": {
+    "release": true,
+    "releaseName": "v${version}"
+  }
+}
