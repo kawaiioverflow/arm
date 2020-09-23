@@ -23,7 +23,8 @@
     "url": "https://github.com/kawaiioverflow/arm.git"
   },
   "scripts": {
-    "format": "prettier --write ."
+    "format": "prettier --write .",
+    "release": "release-it"
   },
   "devDependencies": {
     "prettier": "^2.1.1",
