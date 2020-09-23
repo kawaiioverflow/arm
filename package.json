@@ -24,6 +24,7 @@
   },
   "scripts": {
     "format": "prettier --write .",
+    "lint": "jsonlint -q arm.json",
     "release": "release-it"
   },
   "devDependencies": {
