@@ -1,1 +1,1 @@
-module.export = require('./arm.json')
+module.exports = require('./arm.json')
