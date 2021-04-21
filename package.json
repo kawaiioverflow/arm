@@ -24,10 +24,14 @@
   },
   "scripts": {
     "format": "prettier --write .",
-    "lint": "jsonlint -q arm.json"
+    "lint": "jsonlint -q arm.json",
+    "version:major": "standard-version -r major",
+    "version:minor": "standard-version -r minor",
+    "version:patch": "standard-version -r patch"
   },
   "devDependencies": {
     "jsonlint": "^1.6.3",
-    "prettier": "^2.2.1"
+    "prettier": "^2.2.1",
+    "standard-version": "^9.2.0"
   }
 }
