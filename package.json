@@ -24,13 +24,10 @@
   },
   "scripts": {
     "format": "prettier --write .",
-    "lint": "jsonlint -q arm.json",
-    "release": "dotenv release-it"
+    "lint": "jsonlint -q arm.json"
   },
   "devDependencies": {
-    "dotenv-cli": "^4.0.0",
     "jsonlint": "^1.6.3",
-    "prettier": "^2.2.1",
-    "release-it": "^14.2.2"
+    "prettier": "^2.2.1"
   }
 }
