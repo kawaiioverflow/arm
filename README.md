@@ -26,9 +26,9 @@ $ npm i @kawaiioverflow/arm
 `import` and use this.
 
 ```ts
-import { database } from '@kawaiioverflow/arm'
+import { arm } from '@kawaiioverflow/arm'
 
-console.log(database)
+console.log(arm)
 ```
 
 ## Structure
