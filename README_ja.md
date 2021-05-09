@@ -17,9 +17,9 @@ $ npm i @kawaiioverflow/arm
 `import` して使います。
 
 ```ts
-import { database } from '@kawaiioverflow/arm'
+import { arm } from '@kawaiioverflow/arm'
 
-console.log(database)
+console.log(arm)
 ```
 
 ## 対応サービス
