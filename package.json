@@ -17,21 +17,30 @@
   },
   "license": "MIT",
   "author": "P-Chan",
-  "main": "index.js",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
   "repository": {
     "type": "git",
     "url": "https://github.com/kawaiioverflow/arm.git"
   },
   "scripts": {
+    "build": "tsc",
+    "clean": "rimraf ./dist",
     "format": "prettier --write .",
     "lint": "jsonlint -q arm.json",
+    "prebuild": "npm run clean",
+    "prepublishOnly": "npm run build",
     "version:major": "standard-version -r major",
     "version:minor": "standard-version -r minor",
     "version:patch": "standard-version -r patch"
   },
   "devDependencies": {
+    "@stardust-configs/tsconfig": "^0.1.0",
+    "@types/node": "^15.0.2",
     "jsonlint": "^1.6.3",
     "prettier": "^2.2.1",
-    "standard-version": "^9.2.0"
+    "rimraf": "^3.0.2",
+    "standard-version": "^9.2.0",
+    "typescript": "^4.2.4"
   }
 }
