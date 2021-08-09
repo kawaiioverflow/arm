@@ -4,40 +4,42 @@
 
 @kawaiioverflow/arm is a JSON-based database to relational mapping Anime ID's between MAL, Annict, AniList and Syobocal.
 
-It's available as an npm package and is updated once a week.
+## Install
 
-## Support services
-
-- MyAnimeList (MAL)
-- Annict
-- AniList
-- Syoboi Calendar (Syobocal)
-
-<small>We plan to support Kitsu in the future.</small>
-
-## Usage
-
-Install package.
-
-```shell
-$ npm i @kawaiioverflow/arm
+```sh
+npm i @kawaiioverflow/arm
 ```
 
-`import` and use this.
+or
+
+```sh
+yarn add @kawaiioverflow/arm
+```
+
+## Usage
 
 ```ts
 import { arm } from '@kawaiioverflow/arm'
 
 console.log(arm)
+/*
+[
+  {
+    "mal_id": 5114,
+    "anilist_id": 5114,
+    "annict_id": 1745,
+    "syobocal_tid": 1575
+  },
+  ...
+]
+*/
 ```
 
-## Structure
+## Database
 
-Return an array of `Anime` type. (Return `Anime[]`)
+### Return values
 
-### Anime type
-
-Expressed in TypeScript, it looks like the following type.
+Return an array of `Anime` type.
 
 ```ts
 type Anime = {
@@ -48,36 +50,18 @@ type Anime = {
 }
 ```
 
-<small>Note that the id of syobocal is tid.</small>
+### Support services
 
-### Example
+- MyAnimeList (MAL)
+- Annict
+- AniList
+- Syoboi Calendar (Syobocal)
 
-```json
-[
-  {
-    "mal_id": 5114
-  },
-  {
-    "mal_id": 9253,
-    "annict_id": 865,
-    "syobocal_tid": 2142,
-    "anilist_id": 9253
-  },
-  {
-    "mal_id": 11061,
-    "anilist_id": 11061
-  },
-  .
-  .
-  .
-]
-```
+<small>We plan to support Kitsu in the future.</small>
 
-## Versioning
+### Release cycle
 
-- Major: Add breaking change
-- Minor: Update database, Add new feature (No breaking change)
-- Patch: Fix database, Fix bug
+Once a week, it will be delivered via npm.
 
 ---
 

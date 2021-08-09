@@ -4,40 +4,42 @@
 
 @kawaiioverflow/arm は、MAL / Annict / AniList / しょぼいカレンダー間でアニメ ID をリレーショナルマッピングする JSON ベースのデータベースです。
 
-npm パッケージとして提供していて、週一回更新しています。
+## インストール
 
-## 使用方法
-
-パッケージをインストールします。
-
-```shell
-$ npm i @kawaiioverflow/arm
+```sh
+npm i @kawaiioverflow/arm
 ```
 
-`import` して使います。
+or
+
+```sh
+yarn add @kawaiioverflow/arm
+```
+
+## 使い方
 
 ```ts
 import { arm } from '@kawaiioverflow/arm'
 
 console.log(arm)
+/*
+[
+  {
+    "mal_id": 5114,
+    "anilist_id": 5114,
+    "annict_id": 1745,
+    "syobocal_tid": 1575
+  },
+  ...
+]
+*/
 ```
 
-## 対応サービス
+## データベース
 
-- MyAnimeList
-- Annict
-- AniList
-- しょぼいカレンダー
+### 戻り値
 
-<small>将来的に Kitsu にも対応する予定。</small>
-
-## 構造
-
-`Anime` 型の配列を返します。 (`Anime[]` を返す)
-
-### Anime 型
-
-TypeScript で表すと、以下のような型です。
+`Anime` 型の配列を返します。
 
 ```ts
 type Anime = {
@@ -48,36 +50,18 @@ type Anime = {
 }
 ```
 
-<small>syobocal の id は tid なので、注意してください。</small>
+### 対応サービス
 
-### 例
+- MyAnimeList
+- Annict
+- AniList
+- しょぼいカレンダー
 
-```json
-[
-  {
-    "mal_id": 5114
-  },
-  {
-    "mal_id": 9253,
-    "annict_id": 865,
-    "syobocal_tid": 2142,
-    "anilist_id": 9253
-  },
-  {
-    "mal_id": 11061,
-    "anilist_id": 11061
-  },
-  .
-  .
-  .
-]
-```
+<small>将来的に Kitsu にも対応する予定です。</small>
 
-## バージョニング
+### リリースサイクル
 
-- メジャー: 破壊的変更の追加
-- マイナー: データベースの更新、新しい機能の追加 (破壊的変更は無い)
-- パッチ: データベースの修正、バグの修正
+週に一回、npm で配信します。
 
 ---
 
