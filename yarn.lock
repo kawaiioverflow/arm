@@ -23,20 +23,20 @@
     chalk "^2.0.0"
     js-tokens "^4.0.0"
 
-"@stardust-configs/tsconfig@^0.1.0":
-  version "0.1.0"
-  resolved "https://registry.yarnpkg.com/@stardust-configs/tsconfig/-/tsconfig-0.1.0.tgz#7bdee037985fc74cbbe5f5612115e322a9e00cfa"
-  integrity sha512-2J1E+08re5O45RPs9iWccPsTAHgrIltXwZnehjOfvnKGzsZiPwOhWZ4QmJ2Q1ck56K2xEL1YJUfkCUU6kh+pGA==
+"@stardust-configs/tsconfig@^0.1.1":
+  version "0.1.1"
+  resolved "https://registry.yarnpkg.com/@stardust-configs/tsconfig/-/tsconfig-0.1.1.tgz#025aff2e7e6a0b8781c847f5847bed3a85d9caf6"
+  integrity sha512-CHRiCaETG0Q7Syrm/Uj5zdtRJtQWJiBbPaeH0VAezasBfZj97DHbuCE+2D8eo8YIHXtWbyJK4R1D51GhxsLcpw==
 
 "@types/minimist@^1.2.0":
   version "1.2.1"
   resolved "https://registry.yarnpkg.com/@types/minimist/-/minimist-1.2.1.tgz#283f669ff76d7b8260df8ab7a4262cc83d988256"
   integrity sha512-fZQQafSREFyuZcdWFAExYjBiCL7AUCdgsk80iO0q4yihYYdcIiH28CcuPTGFgLOCC8RlW49GSQxdHwZP+I7CNg==
 
-"@types/node@^15.0.2":
-  version "15.0.2"
-  resolved "https://registry.yarnpkg.com/@types/node/-/node-15.0.2.tgz#51e9c0920d1b45936ea04341aa3e2e58d339fb67"
-  integrity sha512-p68+a+KoxpoB47015IeYZYRrdqMUcpbK8re/zpFB8Ld46LHC1lPEbp3EXgkEhAYEcPvjJF6ZO+869SQ0aH1dcA==
+"@types/node@^16.4.13":
+  version "16.4.13"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-16.4.13.tgz#7dfd9c14661edc65cccd43a29eb454174642370d"
+  integrity sha512-bLL69sKtd25w7p1nvg9pigE4gtKVpGTPojBFLMkGHXuUgap2sLqQt2qUnqmVCDfzGUL0DRNZP+1prIZJbMeAXg==
 
 "@types/normalize-package-data@^2.4.0":
   version "2.4.0"
@@ -1140,10 +1140,10 @@ pinkie@^2.0.0:
   resolved "https://registry.yarnpkg.com/pinkie/-/pinkie-2.0.4.tgz#72556b80cfa0d48a974e80e77248e80ed4f7f870"
   integrity sha1-clVrgM+g1IqXToDnckjoDtT3+HA=
 
-prettier@^2.2.1:
-  version "2.2.1"
-  resolved "https://registry.yarnpkg.com/prettier/-/prettier-2.2.1.tgz#795a1a78dd52f073da0cd42b21f9c91381923ff5"
-  integrity sha512-PqyhM2yCjg/oKkFPtTGUojv7gnZAoG80ttl45O6x2Ug/rMJw4wcc9k6aaf2hibP7BGVCCM33gZoGjyvt9mm16Q==
+prettier@^2.3.2:
+  version "2.3.2"
+  resolved "https://registry.yarnpkg.com/prettier/-/prettier-2.3.2.tgz#ef280a05ec253712e486233db5c6f23441e7342d"
+  integrity sha512-lnJzDfJ66zkMy58OL5/NY5zp70S7Nz6KqcKkXYzn2tMVrNxvbqaBpg7H3qHaLxCJ5lNMsGuM8+ohS7cZrthdLQ==
 
 process-nextick-args@~2.0.0:
   version "2.0.1"
@@ -1379,10 +1379,10 @@ split@^1.0.0:
   dependencies:
     through "2"
 
-standard-version@^9.2.0:
-  version "9.2.0"
-  resolved "https://registry.yarnpkg.com/standard-version/-/standard-version-9.2.0.tgz#d4e64b201ec1abb8a677b265d8755e5e8b9e33a3"
-  integrity sha512-utJcqjk/wR4sePSwDoRcc5CzJ6S+kec5Hd0+1TJI+j1TRYuuptweAnEUdkkjGf2vYoGab2ezefyVtW065HZ1Uw==
+standard-version@^9.3.1:
+  version "9.3.1"
+  resolved "https://registry.yarnpkg.com/standard-version/-/standard-version-9.3.1.tgz#786c16c318847f58a31a2434f97e8db33a635853"
+  integrity sha512-5qMxXw/FxLouC5nANyx/5RY1kiorJx9BppUso8gN07MG64q2uLRmrPb4KfXp3Ql4s/gxjZwZ89e0FwxeLubGww==
   dependencies:
     chalk "^2.4.2"
     conventional-changelog "3.1.24"
@@ -1542,10 +1542,10 @@ typedarray@^0.0.6:
   resolved "https://registry.yarnpkg.com/typedarray/-/typedarray-0.0.6.tgz#867ac74e3864187b1d3d47d996a78ec5c8830777"
   integrity sha1-hnrHTjhkGHsdPUfZlqeOxciDB3c=
 
-typescript@^4.2.4:
-  version "4.2.4"
-  resolved "https://registry.yarnpkg.com/typescript/-/typescript-4.2.4.tgz#8610b59747de028fda898a8aef0e103f156d0961"
-  integrity sha512-V+evlYHZnQkaz8TRBuxTA92yZBPotr5H+WhQ7bD3hZUndx5tGOa1fuCgeSjxAzM1RiN5IzvadIXTVefuuwZCRg==
+typescript@^4.3.5:
+  version "4.3.5"
+  resolved "https://registry.yarnpkg.com/typescript/-/typescript-4.3.5.tgz#4d1c37cc16e893973c45a06886b7113234f119f4"
+  integrity sha512-DqQgihaQ9cUrskJo9kIyW/+g0Vxsk8cDtZ52a3NGh0YNTfpUSArXSohyUGnvbPazEPLu398C0UxmKSOrPumUzA==
 
 uglify-js@^3.1.4:
   version "3.13.4"

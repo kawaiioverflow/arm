@@ -35,12 +35,12 @@
     "version:patch": "standard-version -r patch"
   },
   "devDependencies": {
-    "@stardust-configs/tsconfig": "^0.1.0",
-    "@types/node": "^15.0.2",
+    "@stardust-configs/tsconfig": "^0.1.1",
+    "@types/node": "^16.4.13",
     "jsonlint": "^1.6.3",
-    "prettier": "^2.2.1",
+    "prettier": "^2.3.2",
     "rimraf": "^3.0.2",
-    "standard-version": "^9.2.0",
-    "typescript": "^4.2.4"
+    "standard-version": "^9.3.1",
+    "typescript": "^4.3.5"
   }
 }
