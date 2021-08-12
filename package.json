@@ -6,10 +6,13 @@
   "description": "A JSON-based database to relation mapping Anime ID's between MAL, Annict, AniList and Syobocal",
   "keywords": [
     "anime",
+    "database",
     "myanimelist",
+    "mal",
     "annict",
     "anilist",
-    "syobocal"
+    "syobocal",
+    "syoboi-calendar"
   ],
   "homepage": "https://github.com/kawaiioverflow/arm",
   "bugs": {
