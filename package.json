@@ -14,16 +14,16 @@
     "syobocal",
     "syoboi-calendar"
   ],
-  "files": [
-    "dist",
-    "arm.json"
-  ],
   "homepage": "https://github.com/kawaiioverflow/arm",
   "bugs": {
     "url": "https://github.com/kawaiioverflow/arm/issues"
   },
   "license": "MIT",
   "author": "P-Chan",
+  "files": [
+    "arm.json",
+    "dist"
+  ],
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "repository": {
