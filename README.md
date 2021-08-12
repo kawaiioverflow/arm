@@ -50,14 +50,20 @@ type Anime = {
 }
 ```
 
-### Support services
+### Statistics
 
-- MyAnimeList (MAL)
-- Annict
-- AniList
-- Syoboi Calendar (Syobocal)
+<!-- start statistics -->
 
-<small>We plan to support Kitsu in the future.</small>
+The database has **22654** anime, it consists of data from several services.
+
+| Service         | Anime       |
+| :-------------- | :---------- |
+| MyAnimeList     | 18343 anime |
+| AniList         | 16308 anime |
+| Annict          | 8426 anime  |
+| Syoboi Calendar | 4979 anime  |
+
+<!-- end statistics -->
 
 ### Release cycle
 
