@@ -50,14 +50,10 @@ type Anime = {
 }
 ```
 
-### Support services
+### Statistics
 
-- MyAnimeList (MAL)
-- Annict
-- AniList
-- Syoboi Calendar (Syobocal)
-
-<small>We plan to support Kitsu in the future.</small>
+<!-- start statistics -->
+<!-- end statistics -->
 
 ### Release cycle
 

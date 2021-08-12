@@ -4,5 +4,7 @@
     "declaration": true,
     "outDir": "./dist",
     "baseUrl": "./"
-  }
+  },
+  "include": ["./src/**/*.ts"],
+  "exclude": ["./scripts/**/*.ts"]
 }
