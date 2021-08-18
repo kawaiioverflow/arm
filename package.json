@@ -38,7 +38,7 @@
     "prebuild": "npm run clean",
     "prepublishOnly": "npm run build",
     "sync-statistics": "ts-node ./scripts/sync-statistics.ts",
-    "postsync-statistics": "npm run format",
+    "postsync-statistics": "prettier --write README.md",
     "version:major": "standard-version -r major",
     "version:minor": "standard-version -r minor",
     "version:patch": "standard-version -r patch"
