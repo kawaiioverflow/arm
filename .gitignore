@@ -6,3 +6,6 @@ node_modules
 
 # output
 dist
+
+# temporary output
+.arm
