@@ -2,7 +2,7 @@
   "name": "@kawaiioverflow/arm",
   "version": "0.83.0",
   "generatorVersion": "0.10.0",
-  "generatedAt": "2022-03-30T12:27:32+09:00",
+  "generatedAt": "2022-04-06T12:26:41+09:00",
   "description": "A JSON-based database to relation mapping Anime ID's between MAL, Annict, AniList and Syobocal",
   "keywords": [
     "anime",
@@ -54,23 +54,23 @@
     "typescript": "^4.3.5"
   },
   "statistics": {
-    "length": 24025,
+    "length": 23678,
     "services": [
       {
         "name": "MyAnimeList",
-        "length": 19600
+        "length": 19832
       },
       {
         "name": "AniList",
-        "length": 17438
+        "length": 17457
       },
       {
         "name": "Annict",
-        "length": 8985
+        "length": 9019
       },
       {
         "name": "Syoboi Calendar",
-        "length": 5195
+        "length": 5202
       }
     ]
   }
