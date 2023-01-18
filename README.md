@@ -54,14 +54,14 @@ type Anime = {
 
 <!-- start statistics -->
 
-The database has **27785** anime, it consists of data from several services.
+The database has **27831** anime, it consists of data from several services.
 
 | Service         | Anime       |
 | :-------------- | :---------- |
-| MyAnimeList     | 23865 anime |
-| AniList         | 18461 anime |
-| Annict          | 9888 anime  |
-| Syoboi Calendar | 5438 anime  |
+| MyAnimeList     | 23900 anime |
+| AniList         | 18475 anime |
+| Annict          | 9923 anime  |
+| Syoboi Calendar | 5441 anime  |
 
 <!-- end statistics -->
 
