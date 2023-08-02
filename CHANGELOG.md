@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.140.0](https://github.com/kawaiioverflow/arm/compare/v0.139.0...v0.140.0) (2023-08-02)
+
+
+### Features
+
+* update database ([1489d03](https://github.com/kawaiioverflow/arm/commit/1489d03998292f2e2fe94d9ef5c10e95ff55b57a))
+
 ## [0.139.0](https://github.com/kawaiioverflow/arm/compare/v0.138.0...v0.139.0) (2023-07-30)
 
 
