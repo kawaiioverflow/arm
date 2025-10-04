@@ -11,26 +11,30 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v5
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
       - name: Setup Node.js
         uses: actions/setup-node@v5
         with:
           node-version-file: '.node-version'
-          cache: 'yarn'
+          cache: 'pnpm'
       - name: Install dependencies
-        run: yarn install
+        run: pnpm install
       - name: Build
-        run: yarn build
+        run: pnpm build
 
   lint:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v5
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
       - name: Setup Node.js
         uses: actions/setup-node@v5
         with:
           node-version-file: '.node-version'
-          cache: 'yarn'
+          cache: 'pnpm'
       - name: Install dependencies
-        run: yarn install
+        run: pnpm install
       - name: Lint
-        run: yarn lint
+        run: pnpm lint
