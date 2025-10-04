@@ -52,6 +52,7 @@
   "engines": {
     "node": ">=18.0.0"
   },
+  "packageManager": "pnpm@10.17.1",
   "statistics": {
     "length": 35117,
     "services": [
