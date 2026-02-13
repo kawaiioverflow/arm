@@ -10,7 +10,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v6
       - name: Setup pnpm
         uses: pnpm/action-setup@v4
       - name: Setup Node.js
@@ -26,7 +26,7 @@ jobs:
   lint:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v6
       - name: Setup pnpm
         uses: pnpm/action-setup@v4
       - name: Setup Node.js
@@ -38,3 +38,65 @@ jobs:
         run: pnpm install
       - name: Lint
         run: pnpm lint
+
+  check-statistics:
+    runs-on: ubuntu-latest
+    if: github.event_name == 'pull_request'
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
+      - name: Check statistics length
+        run: |
+          # Get package.json from master branch
+          git show origin/master:package.json > master-package.json
+
+          # Compare statistics length
+          echo "📊 Statistics comparison:"
+          echo ""
+
+          # Show total length
+          master_total=$(jq -r '.statistics.length' master-package.json)
+          current_total=$(jq -r '.statistics.length' package.json)
+          echo "Total: $master_total → $current_total"
+          echo ""
+
+          # Get all service names from both master and current
+          all_services=$(jq -r '.statistics.services[].name' master-package.json package.json | sort -u)
+          has_error=0
+
+          while IFS= read -r service; do
+            master_length=$(jq -r ".statistics.services[] | select(.name == \"$service\") | .length" master-package.json)
+            current_length=$(jq -r ".statistics.services[] | select(.name == \"$service\") | .length" package.json)
+
+            # Service exists in master but missing in PR
+            if [ -n "$master_length" ] && [ -z "$current_length" ]; then
+              echo "$service: $master_length → (missing)"
+              echo "❌ Error: service '$service' was removed"
+              has_error=1
+              continue
+            fi
+
+            # New service in PR only
+            if [ -z "$master_length" ] && [ -n "$current_length" ]; then
+              echo "$service: (new) → $current_length"
+              continue
+            fi
+
+            # Service exists in both, compare lengths
+            echo "$service: $master_length → $current_length"
+
+            if [ "$current_length" -lt "$master_length" ]; then
+              echo "❌ Error: $service length decreased from $master_length to $current_length"
+              has_error=1
+            fi
+          done <<< "$all_services"
+
+          if [ "$has_error" -eq 1 ]; then
+            echo ""
+            echo "❌ One or more services have decreased length or were removed"
+            exit 1
+          fi
+
+          echo ""
+          echo "✅ All statistics checks passed"
