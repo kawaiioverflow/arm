@@ -62,12 +62,13 @@ jobs:
           echo ""
 
           # Compare each service's length
-          services=$(jq -r '.statistics.services[].name' package.json)
+          service_count=$(jq -r '.statistics.services | length' package.json)
           has_error=0
 
-          for service in $services; do
-            master_length=$(jq -r ".statistics.services[] | select(.name == \"$service\") | .length" master-package.json)
-            current_length=$(jq -r ".statistics.services[] | select(.name == \"$service\") | .length" package.json)
+          for i in $(seq 0 $((service_count - 1))); do
+            service=$(jq -r ".statistics.services[$i].name" package.json)
+            master_length=$(jq -r ".statistics.services[$i].length" master-package.json)
+            current_length=$(jq -r ".statistics.services[$i].length" package.json)
 
             echo "$service: $master_length → $current_length"
 
