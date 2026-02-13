@@ -10,7 +10,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v6
       - name: Setup pnpm
         uses: pnpm/action-setup@v4
       - name: Setup Node.js
@@ -26,7 +26,7 @@ jobs:
   lint:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v6
       - name: Setup pnpm
         uses: pnpm/action-setup@v4
       - name: Setup Node.js
@@ -38,3 +38,50 @@ jobs:
         run: pnpm install
       - name: Lint
         run: pnpm lint
+
+  check-statistics:
+    runs-on: ubuntu-latest
+    if: github.event_name == 'pull_request'
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
+      - name: Check statistics length
+        run: |
+          # Get package.json from master branch
+          git show origin/master:package.json > master-package.json
+
+          # Compare statistics length
+          echo "📊 Statistics comparison:"
+          echo ""
+
+          # Show total length
+          master_total=$(jq -r '.statistics.length' master-package.json)
+          current_total=$(jq -r '.statistics.length' package.json)
+          echo "Total: $master_total → $current_total"
+          echo ""
+
+          # Compare each service's length
+          services=$(jq -r '.statistics.services[].name' package.json)
+          has_error=0
+
+          for service in $services; do
+            master_length=$(jq -r ".statistics.services[] | select(.name == \"$service\") | .length" master-package.json)
+            current_length=$(jq -r ".statistics.services[] | select(.name == \"$service\") | .length" package.json)
+
+            echo "$service: $master_length → $current_length"
+
+            if [ "$current_length" -lt "$master_length" ]; then
+              echo "❌ Error: $service length decreased from $master_length to $current_length"
+              has_error=1
+            fi
+          done
+
+          if [ "$has_error" -eq 1 ]; then
+            echo ""
+            echo "❌ One or more services have decreased length"
+            exit 1
+          fi
+
+          echo ""
+          echo "✅ All statistics checks passed"
