@@ -61,26 +61,40 @@ jobs:
           echo "Total: $master_total → $current_total"
           echo ""
 
-          # Compare each service's length
-          service_count=$(jq -r '.statistics.services | length' package.json)
+          # Get all service names from both master and current
+          all_services=$(jq -r '.statistics.services[].name' master-package.json package.json | sort -u)
           has_error=0
 
-          for i in $(seq 0 $((service_count - 1))); do
-            service=$(jq -r ".statistics.services[$i].name" package.json)
-            master_length=$(jq -r ".statistics.services[$i].length" master-package.json)
-            current_length=$(jq -r ".statistics.services[$i].length" package.json)
+          while IFS= read -r service; do
+            master_length=$(jq -r ".statistics.services[] | select(.name == \"$service\") | .length" master-package.json)
+            current_length=$(jq -r ".statistics.services[] | select(.name == \"$service\") | .length" package.json)
 
+            # Service exists in master but missing in PR
+            if [ -n "$master_length" ] && [ -z "$current_length" ]; then
+              echo "$service: $master_length → (missing)"
+              echo "❌ Error: service '$service' was removed"
+              has_error=1
+              continue
+            fi
+
+            # New service in PR only
+            if [ -z "$master_length" ] && [ -n "$current_length" ]; then
+              echo "$service: (new) → $current_length"
+              continue
+            fi
+
+            # Service exists in both, compare lengths
             echo "$service: $master_length → $current_length"
 
             if [ "$current_length" -lt "$master_length" ]; then
               echo "❌ Error: $service length decreased from $master_length to $current_length"
               has_error=1
             fi
-          done
+          done <<< "$all_services"
 
           if [ "$has_error" -eq 1 ]; then
             echo ""
-            echo "❌ One or more services have decreased length"
+            echo "❌ One or more services have decreased length or were removed"
             exit 1
           fi
 
