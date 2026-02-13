@@ -6,6 +6,7 @@ on:
 permissions:
   contents: write
   pull-requests: write
+  id-token: write
 
 name: release-please
 
@@ -30,7 +31,5 @@ jobs:
       - name: Install dependencies
         run: pnpm install
         if: ${{ steps.release.outputs.release_created }}
-      - run: npm publish
-        env:
-          NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
+      - run: npm publish --provenance --access public
         if: ${{ steps.release.outputs.release_created }}
