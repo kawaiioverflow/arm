@@ -3,10 +3,6 @@ on:
     branches:
       - master
 
-permissions:
-  contents: write
-  pull-requests: write
-
 name: release-please
 
 jobs:
@@ -20,6 +16,7 @@ jobs:
         with:
           release-type: node
           bump-minor-pre-major: true
+          token: ${{ secrets.PAT }}
 
   publish:
     needs: release-please
