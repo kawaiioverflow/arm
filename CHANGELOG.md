@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.228.0](https://github.com/kawaiioverflow/arm/compare/v0.227.0...v0.228.0) (2026-02-19)
+
+
+### Features
+
+* update database ([95c0235](https://github.com/kawaiioverflow/arm/commit/95c0235a2526753ef480b39d558871e4e02e844a))
+
+
+### Bug Fixes
+
+* add --merge flag to auto-merge workflow ([f9a71b8](https://github.com/kawaiioverflow/arm/commit/f9a71b861b6080a1f86b4f192551dc3fb47af02a))
+
 ## [0.227.0](https://github.com/kawaiioverflow/arm/compare/v0.226.0...v0.227.0) (2026-02-13)
 
 
