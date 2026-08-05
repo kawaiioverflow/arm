@@ -1,6 +1,6 @@
 {
   "name": "@kawaiioverflow/arm",
-  "version": "0.237.0",
+  "version": "0.238.0",
   "generatorVersion": "0.16.0",
   "generatedAt": "2026-08-05T15:01:02+09:00",
   "description": "A JSON-based database to relation mapping Anime ID's between MAL, Annict, AniList and Syobocal",
